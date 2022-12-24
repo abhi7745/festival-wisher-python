@@ -1,24 +1,4 @@
-from datetime import date, datetime
-
-# print(date.today())
-
-import smtplib
-import ssl
-from email.message import EmailMessage
-
-from config import SENDER_EMAIL, PASSWORD, RECEIVER_EMAIL_DICT
-
-def email_sender(receiver_name, festival_name):
-    # message setting area
-    message=EmailMessage()
-    message['From'] = SENDER_EMAIL
-    message['To'] = receiver_name
-    message['Subject'] = festival_name
-    # message.set_content(body)
-
-
-    html = f"""
-    <!DOCTYPE html>
+<!DOCTYPE html>
 
 <head>
 	<title></title>
@@ -160,56 +140,3 @@ def email_sender(receiver_name, festival_name):
 </body>
 
 </html>
-
-    """
-
-    message.add_alternative(html, subtype="html")
-    context=ssl.create_default_context() # it securing connection
-
-    print('Sending Email to User')
-
-    with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
-        server.login(SENDER_EMAIL, PASSWORD)
-        server.sendmail(SENDER_EMAIL, receiver_name, message.as_string())
-
-    print(f'{fest_name} wish sended to ', receiver_name)
-        
-
-
-fest_name_data = {
-                    'NewYear' : '2022-01-01', 
-                    'RepublicDay' : '2022-01-26', 
-                    'IndependenceDay' : '2020-08-15',   
-                    'GandhiJayanti' : '2020-10-02',  
-                    # 'Christmas' : '2022-12-25',
-                    'Christmas' : '2022-12-24',
-                }
-
-
-
-for fest_name, day in fest_name_data.items():
-    # print(fest_name, day)
-    if date.today() == datetime.strptime(day, '%Y-%m-%d').date():
-        # print('Trueee')
-        if fest_name == 'NewYear':
-            print('NewYear')
-
-        elif fest_name == 'RepublicDay':
-            print('RepublicDay')
-
-        elif fest_name == 'IndependenceDay':
-            print('IndependenceDay')
-
-        elif fest_name == 'GandhiJayanti':
-            print('GandhiJayanti')
-
-        elif fest_name == 'Christmas':
-            print('Christmas')
-            for receiver_name in RECEIVER_EMAIL_DICT:
-                print(receiver_name)
-                email_sender(receiver_name, 'Happy Christmas!')
-
-    # else:
-    #     print('No festival found on the date : ', date.today())
-
-print('Completed.........!')
