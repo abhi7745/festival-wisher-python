@@ -176,7 +176,7 @@ def christmas_email_sender(receiver_name, festival_name):
         server.sendmail(SENDER_EMAIL, receiver_name, message.as_string())
 
     print(f'{fest_name} wish sended to ', receiver_name)
-# christmas email sender function and template - start   
+# christmas email sender function and template - end   
 
 
 
@@ -309,14 +309,118 @@ def newyear_email_sender(receiver_name, festival_name):
         server.sendmail(SENDER_EMAIL, receiver_name, message.as_string())
 
     print(f'{fest_name} wish sended to ', receiver_name)
-# newyear email sender function and template - start 
+# newyear email sender function and template - end 
+
+# republic-day email sender function and template - start
+def republic_day_email_sender(receiver_name, festival_name):
+    # message setting area
+    message=EmailMessage()
+    message['From'] = SENDER_EMAIL
+    message['To'] = receiver_name
+    message['Subject'] = festival_name
+    # message.set_content(body)
 
 
+    html = f"""
+        <!DOCTYPE html>
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
+
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--[if mso]><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch><o:AllowPNG/></o:OfficeDocumentSettings></xml><![endif]-->
+	<!--[if !mso]><!-->
+	<link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
+	<!--<![endif]-->
+	
+</head>
+
+<body style="background-color: #071013; margin: 0; padding: 0; -webkit-text-size-adjust: none; text-size-adjust: none;">
+	<table class="nl-container" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #071013;">
+		<tbody>
+			<tr>
+				<td>
+					<table class="row row-1" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f6d8df;">
+						<tbody>
+							<tr>
+								<td>
+									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000000; width: 680px;" width="680">
+										<tbody>
+											<tr>
+												<td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; padding-top: 5px; padding-bottom: 5px; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+													<table class="image_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+														<tr>
+															<td class="pad" style="width:100%;padding-right:0px;padding-left:0px;">
+																<div class="alignment" align="center" style="line-height:10px"><img class="fullMobileWidth" src="https://file.pngbackground.com/uploads/preview/happy-republic-day-cb-editing-background-11609963695kdtfsaxgvm.jpg" style="display: block; height: auto; border: 0; width: 680px; max-width: 100%;" width="680"></div>
+															</td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="row row-2" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+						<tbody>
+							<tr>
+								<td>
+									<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000000; width: 680px;" width="680">
+										<tbody>
+											<tr>
+												<td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; vertical-align: top; padding-top: 5px; padding-bottom: 5px; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+													<table class="text_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+														<tr>
+															<td class="pad" style="padding-bottom:10px;padding-left:20px;padding-right:20px;padding-top:10px;">
+																<div style="font-family: sans-serif">
+																	<div class style="font-size: 12px; mso-line-height-alt: 14.399999999999999px; color: #a9a9a9; line-height: 1.2; font-family: Bitter, Georgia, Times, Times New Roman, serif;">
+																		<p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 16.8px;"><a href="http://www.example.com" target="_blank" style="text-decoration: none; color: #ffffff;" rel="noopener"></a>By</p>
+																		<p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 16.8px;">Abhijith KR</p>
+																	</div>
+																</div>
+															</td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table><!-- End -->
+</body>
+
+</html>
+    """
+
+    message.add_alternative(html, subtype="html")
+    context=ssl.create_default_context() # it securing connection
+
+    print(f'Sending Email to {receiver_name}')
+
+    with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
+        server.login(SENDER_EMAIL, PASSWORD)
+        server.sendmail(SENDER_EMAIL, receiver_name, message.as_string())
+
+    print(f'{fest_name} wish sended to ', receiver_name)
+# republic-day email sender function and template - end
 
 # main area to check whether the festival fount - start
 fest_name_data = {
                     'NewYear' : f'{current_year.year}-12-31', # 'NewYear' : '2023-01-01',
-                    'RepublicDay' : f'{current_year.year}-01-26', 
+                    'RepublicDay' : f'{current_year.year}-01-25', # RepublicDay : 2023-01-26
                     'IndependenceDay' : f'{current_year.year}-08-15',
                     'GandhiJayanti' : f'{current_year.year}-10-02',  
                     'Christmas' : f'{current_year.year}-12-24', # 'Christmas' : '2022-12-25',
@@ -334,6 +438,9 @@ for fest_name, day in fest_name_data.items():
 
         elif fest_name == 'RepublicDay':
             print('RepublicDay', day)
+            for receiver_name in RECEIVER_EMAIL_DICT:
+                # print(receiver_name)
+                republic_day_email_sender(receiver_name, 'Happy Republic!')
 
         elif fest_name == 'IndependenceDay':
             print('IndependenceDay', day)
