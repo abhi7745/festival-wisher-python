@@ -8,7 +8,16 @@ import smtplib
 import ssl
 from email.message import EmailMessage
 
+# for normal use ---------------------------------------------
 from config import SENDER_EMAIL, PASSWORD, RECEIVER_EMAIL_DICT
+# for normal use ---------------------------------------------
+
+# for github action case start-------------------
+# from config import RECEIVER_EMAIL_DICT
+# import os
+# SENDER_EMAIL = os.environ['SENDER_EMAIL']
+# PASSWORD = os.environ['PASSWORD']
+# for github action case end--------------------
 
 # christmas email sender function and template - start
 def christmas_email_sender(receiver_name, festival_name):
@@ -177,8 +186,6 @@ def christmas_email_sender(receiver_name, festival_name):
 
     print(f'{fest_name} wish sended to ', receiver_name)
 # christmas email sender function and template - end   
-
-
 
 # newyear email sender function and template - start
 def newyear_email_sender(receiver_name, festival_name):
