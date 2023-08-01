@@ -184,7 +184,7 @@ def christmas_email_sender(receiver_name, festival_name):
         server.login(SENDER_EMAIL, PASSWORD)
         server.sendmail(SENDER_EMAIL, receiver_name, message.as_string())
 
-    print(f'{fest_name} wish sended to ', receiver_name)
+    print(f'{festival_name} wish sended to ', receiver_name)
 # christmas email sender function and template - end   
 
 # newyear email sender function and template - start
@@ -315,7 +315,7 @@ def newyear_email_sender(receiver_name, festival_name):
         server.login(SENDER_EMAIL, PASSWORD)
         server.sendmail(SENDER_EMAIL, receiver_name, message.as_string())
 
-    print(f'{fest_name} wish sended to ', receiver_name)
+    print(f'{festival_name} wish sended to ', receiver_name)
 # newyear email sender function and template - end 
 
 # republic-day email sender function and template - start
@@ -421,16 +421,117 @@ def republic_day_email_sender(receiver_name, festival_name):
         server.login(SENDER_EMAIL, PASSWORD)
         server.sendmail(SENDER_EMAIL, receiver_name, message.as_string())
 
-    print(f'{fest_name} wish sended to ', receiver_name)
+    print(f'{festival_name} wish sended to ', receiver_name)
 # republic-day email sender function and template - end
+
+# independence day email sender function and template - start
+def independence_day_email_sender(receiver_name, festival_name):
+    # message setting area
+    message=EmailMessage()
+    message['From'] = SENDER_EMAIL
+    message['To'] = receiver_name
+    message['Subject'] = festival_name
+    # message.set_content(body)
+
+
+    html = f"""
+	<!DOCTYPE html>
+	<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
+
+	<head>
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"><!--[if mso]><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch><o:AllowPNG/></o:OfficeDocumentSettings></xml><![endif]--><!--[if !mso]><!--><!--<![endif]-->
+	</head>
+
+	<body style="text-size-adjust: none; background-color: #eee; margin: 0; padding: 0;">
+		<table class="nl-container" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #eee;">
+			<tbody>
+				<tr>
+					<td>
+						<table class="row row-1" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+							<tbody>
+								<tr>
+									<td>
+										<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000; background-color: #f9d075; background-position: top; width: 640px; margin: 0 auto;" width="640">
+											<tbody>
+												<tr>
+													<td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-align: left; font-weight: 400; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+														<div class="spacer_block block-1" style="height:60px;line-height:60px;font-size:1px;">&#8202;</div>
+														<table class="image_block block-2" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+															<tr>
+																<td class="pad" style="width:100%;padding-right:0px;padding-left:0px;">
+																	<div class="alignment" align="center" style="line-height:10px"><img class="fullWidth" src="https://pngfreepic.com/wp-content/uploads/2021/08/independence-day-png-94.png?v=1663321175" style="height: auto; display: block; border: 0; max-width: 640px; width: 100%;" width="640" alt="Independence Day Banner Image" title="Independence Day Banner Image"></div>
+																</td>
+															</tr>
+														</table>
+														<div class="spacer_block block-3" style="height:60px;line-height:60px;font-size:1px;">&#8202;</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="row row-2" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+							<tbody>
+								<tr>
+									<td>
+										<table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000; background-color: #fff; width: 640px; margin: 0 auto;" width="640">
+											<tbody>
+												<tr>
+													<td class="column column-1" width="100%" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-align: left; font-weight: 400; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;">
+														<table class="text_block block-1" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+															<tr>
+																<td class="pad">
+																	<div style="font-family: Arial, sans-serif">
+																		<div class style="font-size: 12px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; mso-line-height-alt: 14.399999999999999px; color: #c0c0c0; line-height: 1.2;">
+																			<p style="margin: 0; font-size: 12px; text-align: center; mso-line-height-alt: 14.399999999999999px;"><span style="color:#152a6d;"><span style="font-size:14px;">By</span></span></p>
+																			<p style="margin: 0; font-size: 12px; text-align: center; mso-line-height-alt: 14.399999999999999px;"><span style="color:#152a6d;"><span style="font-size:14px;">Abhijith KR</span></span></p>
+																		</div>
+																	</div>
+																</td>
+															</tr>
+														</table>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						
+					</td>
+				</tr>
+			</tbody>
+		</table><!-- End -->
+	</body>
+
+	</html>
+
+    """
+
+    message.add_alternative(html, subtype="html")
+    context=ssl.create_default_context() # it securing connection
+
+    print(f'Sending Email to {receiver_name}')
+
+    with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
+        server.login(SENDER_EMAIL, PASSWORD)
+        server.sendmail(SENDER_EMAIL, receiver_name, message.as_string())
+
+    print(f'{festival_name} wish sended to ', receiver_name)
+# independence day email sender function and template - end
 
 # main area to check whether the festival fount - start
 fest_name_data = {
-                    'NewYear' : f'{current_year.year}-12-31', # 'NewYear' : '2023-01-01',
-                    'RepublicDay' : f'{current_year.year}-01-25', # RepublicDay : 2023-01-26
-                    'IndependenceDay' : f'{current_year.year}-08-15',
+                    'NewYear' : f'{current_year.year}-12-31', # NewYear: 2023-01-01
+                    'RepublicDay' : f'{current_year.year}-01-25', # RepublicDay: 2023-01-26
+                    'IndependenceDay' : f'{current_year.year}-08-14', #IndependenceDay: 2o23-08-15
                     'GandhiJayanti' : f'{current_year.year}-10-02',  
-                    'Christmas' : f'{current_year.year}-12-24', # 'Christmas' : '2022-12-25',
+                    'Christmas' : f'{current_year.year}-12-24', # Christmas: 2022-12-25
                 }
 
 for fest_name, day in fest_name_data.items():
@@ -451,6 +552,9 @@ for fest_name, day in fest_name_data.items():
 
         elif fest_name == 'IndependenceDay':
             print('IndependenceDay', day)
+            for receiver_name in RECEIVER_EMAIL_DICT:
+                # print(receiver_name)
+                independence_day_email_sender(receiver_name, 'Happy Independence!')
 
         elif fest_name == 'GandhiJayanti':
             print('GandhiJayanti', day)
